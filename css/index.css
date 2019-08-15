@@ -221,42 +221,36 @@ p {
 }
 /* About */
 .about-container {
-  padding: 50px;
   display: flex;
   flex-direction: column;
-  background-color: black;
-  height: 100vh;
-  justify-content: center;
-}
-.about-content,
-.about-content2 {
-  margin: 10px;
-  color: white;
+  padding: 50px;
+  background-color: #060F14;
 }
 .about-content {
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
-.about-content h2 {
-  text-align: center;
-  padding: 20px;
-}
-.about-content p {
-  padding-left: 20px;
-}
-.about-content h2,
-.about-content p,
+.about-content,
 .content2 {
+  padding: 25px;
   line-height: 2;
 }
-.content,
-.content2 {
-  width: 40%;
-  margin: 50px;
-  border: 1px solid white;
+.about-content img {
+  width: 601px;
+  height: 480px;
 }
-.content2 {
-  padding-left: 50px;
+.about-row {
+  display: flex;
+  justify-content: space-between;
+}
+.row1,
+.row2 {
+  width: 45%;
+}
+.row1 {
+  background-color: #2F5267;
+  color: white;
+  border: 2px solid black;
+  padding: 20px;
 }
 /* Portfolio */
 .portfolio-container {
