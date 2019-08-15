@@ -60,8 +60,14 @@ html, body {
 /* Main Codes */
 @main-font: 'Roboto Mono', monospace;
 @font-color: white;
-@main-color: ##112E32;
+@main-color: #060F14;
 
+/* Mix-ins */
+.box-design(){
+	padding: 20px;
+	margin: 0 auto;
+	border-bottom: 2px solid gray;
+}
 
 /* Nav Bar */
 .nav-container{
@@ -69,10 +75,15 @@ html, body {
 	position: fixed;
 	text-align: center;
 	width: 100%;
-	padding: 20px;
 	font-size: 1em;
 	background: url("../img/nav-bg.jpg");
-	border-bottom:2px solid grey;
+	.box-design();
+
+	@media ( max-width: 500px ){
+		position: static;
+		display: flex;
+		flex-direction: column-reverse;
+	}
 }
 .navLinks{
 	display: flex;
@@ -94,7 +105,7 @@ a{
 	text-decoration: none;
 }
 .fas{
-	color: white;
+	color: @font-color;
 	font-size: 20px;
 }
 
@@ -108,6 +119,7 @@ a{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	.box-design();
 }
 
 .home-content{
@@ -162,15 +174,12 @@ p{
 .about-container{
 	display:flex;
 	flex-direction: column;
-	padding: 50px;
-	background-color:#060F14;
-}
-.about-content{
-	width: 100%;
+	background-color:@main-color;
+	.box-design();
 }
 
+
 .about-content, .content2{
-	padding: 25px;
 	line-height: 2;
 }
 .about-content img{
@@ -179,33 +188,69 @@ p{
 }
 .about-row{
 	display:flex;
-	justify-content: space-between;
+	width: 100%;
+	justify-content: center;
+
+	@media ( max-width: 500px ){
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }
 .row1, .row2{
-	width: 45%;
+	width: 90%;
  }
 
 .row1{
 	background-color: #2F5267;
 	color: white;
 	border: 2px solid black;
-	padding: 20px;
+	margin-right: 20px;
 }
+
+.row2{
+	display: flex;
+	justify-content: center;
+}
+
+.row2 img{
+	@media ( max-width: 500px ){
+		width: 90%;
+	}
+}
+
 /* Portfolio */
 .portfolio-container{
 	padding: 50px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
-.work, .education{
-	padding-left: 50px;
-	padding-bottom: 25px;
+.work, .education, .add-info{
+	padding: 25px 50px;
+	width: 60%;
+	border-bottom: 2px solid black;
+	line-height: 2;
+
+	@media ( max-width: 500px ){
+		width: 100%;
+	}
+}
+
+span{
+	font-weight: bold;
+}
+.education-row{
+	margin-top: 20px;
 }
 
 /* Contact */
 .contact-container{
-	padding: 50px 50px;
+	padding: 50px 100px;
 	border-top: 1px solid black;
+	line-height: 2;
+	background-color: @main-color;
+	color: @font-color;
 }
